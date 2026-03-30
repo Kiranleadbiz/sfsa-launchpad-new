@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -25,7 +24,6 @@ import testimonialMani from "@/assets/testimonial-mani.png";
 import testimonialShafi from "@/assets/testimonial-shafi.png";
 import testimonialBunny from "@/assets/testimonial-bunny.png";
 import testimonialAdnan from "@/assets/testimonial-adnan.jpeg";
-import introductionVideo from "@/assets/Introduction_final_02.mp4";
 import {
   ArrowRight, Star, Clock,
   Dumbbell, Apple, Trophy, CheckCircle, Award,
@@ -117,10 +115,6 @@ const staggerItem = {
 };
 
 const Index = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
     <Layout>
       {/* ─── HERO ─── */}
@@ -262,27 +256,11 @@ const Index = () => {
                   transition={{ duration: 0.4 }}
                   className="rounded-3xl overflow-hidden shadow-xl relative"
                 >
-                  <video
-                    ref={videoRef}
-                    src={introductionVideo}
-                    className="w-full h-[340px] md:h-[480px] object-contain rounded-3xl"
-                    autoPlay
-                    muted
-                    playsInline
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
+                  <img
+                    src={courseCpt}
+                    alt="SFSA practical training session"
+                    className="w-full h-[340px] md:h-[480px] object-cover rounded-3xl"
                   />
-                  <button
-                    onClick={() => {
-                      if (videoRef.current) {
-                        videoRef.current.muted = !videoRef.current.muted;
-                        setIsMuted(!isMuted);
-                      }
-                    }}
-                    className="absolute bottom-4 right-4 bg-accent text-foreground px-4 py-2 rounded-lg font-semibold text-sm hover:bg-accent/90 transition-all duration-300 shadow-lg"
-                  >
-                    {isMuted ? "🔇 Unmute" : "🔊 Mute"}
-                  </button>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
