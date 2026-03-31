@@ -5,24 +5,30 @@ import AnimatedSection from "@/components/AnimatedSection";
 import GlowCard from "@/components/GlowCard";
 import { Button } from "@/components/ui/button";
 import { Clock, ArrowRight, Dumbbell, Apple, Trophy } from "lucide-react";
+import workshopFunctional from "@/assets/workshop-functional.jpg";
+import workshopInjury from "@/assets/workshop-injury.jpg";
+import workshopNutrition from "@/assets/workshop-nutrition.jpg";
 
 const workshops = [
   {
     title: "Functional Training Workshop",
     duration: "2 Days",
     icon: Dumbbell,
+    image: workshopFunctional,
     desc: "Hands-on workshop covering functional movement patterns, kettlebell training, TRX, and bodyweight exercises for real-world coaching.",
   },
   {
     title: "Sports Injury Prevention",
     duration: "1 Day",
     icon: Trophy,
+    image: workshopInjury,
     desc: "Learn common sports injuries, prevention strategies, basic taping techniques, and when to refer clients to medical professionals.",
   },
   {
     title: "Nutrition for Fat Loss",
     duration: "1 Day",
     icon: Apple,
+    image: workshopNutrition,
     desc: "Evidence-based fat loss nutrition strategies, macro calculations, meal prep guidance, and client counseling techniques.",
   },
 ];
@@ -45,23 +51,32 @@ const WorkshopsPage = () => (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {workshops.map((w, i) => (
             <AnimatedSection key={w.title} delay={i * 0.08}>
-              <GlowCard className="float-card p-8 h-full flex flex-col group rounded-2xl">
+              <GlowCard className="float-card h-full flex flex-col group rounded-2xl overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-t-2xl" />
-                <div className="icon-badge-xl mb-5 group-hover:scale-110 transition-all duration-300">
-                  <w.icon className="text-accent" size={28} />
+                <div className="h-56 md:h-60 overflow-hidden">
+                  <img
+                    src={w.image}
+                    alt={w.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="font-heading text-lg font-semibold mb-2 leading-snug">{w.title}</h3>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium bg-muted px-3 py-1.5 rounded-full">
-                    <Clock size={12} /> {w.duration}
-                  </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="icon-badge-xl mb-4 group-hover:scale-110 transition-all duration-300">
+                    <w.icon className="text-accent" size={24} />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold mb-2 leading-snug">{w.title}</h3>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium bg-muted px-3 py-1.5 rounded-full">
+                      <Clock size={12} /> {w.duration}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{w.desc}</p>
+                  <Button asChild className="w-full btn-yellow rounded-md !h-10 !text-sm !px-4">
+                    <Link to="/contact">
+                      Enrol Now <ArrowRight className="ml-1" size={14} />
+                    </Link>
+                  </Button>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{w.desc}</p>
-                <Button asChild className="w-full btn-yellow rounded-md !h-10 !text-sm !px-4">
-                  <Link to="/contact">
-                    Enrol Now <ArrowRight className="ml-1" size={14} />
-                  </Link>
-                </Button>
               </GlowCard>
             </AnimatedSection>
           ))}

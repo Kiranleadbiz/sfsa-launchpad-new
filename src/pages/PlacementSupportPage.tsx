@@ -8,11 +8,28 @@ import { Button } from "@/components/ui/button";
 import {
   Briefcase, Users, Building2, GraduationCap, Mail, Phone, Handshake,
 } from "lucide-react";
+import fitMapLogo from "@/assets/Fitmap.png";
+import f45Logo from "@/assets/F45.jpeg";
+import starkLogo from "@/assets/Stark.png";
+import crossfitLogo from "@/assets/crossfit.png";
+import hotLogo from "@/assets/House of transformations.jpeg";
+import platinumLogo from "@/assets/Platinum.jpg";
+import gymLogo from "@/assets/the gym 365.png";
+import cultfitLogo from "@/assets/cultfitlogo.png";
 
 const placementPartners = [
-  { name: "Fit Map", location: "Banjara Hills, Hyderabad" },
-  { name: "F45", location: "Kukatpally, Hyderabad" },
-  { name: "Stark Fitness", location: "All Branches, Hyderabad" },
+  { name: "Fit Map", location: "Banjara Hills, Hyderabad", logo: fitMapLogo },
+  { name: "F45", location: "Kukatpally, Hyderabad", logo: f45Logo },
+  {
+    name: "Stark Fitness",
+    location: "Sainikpuri, Madhapur, Bachupally, Mallampet, Hydernagar, Bandlaguda, Nizampet, Pragathi Nagar, Gajularamaram – Hyderabad",
+    logo: starkLogo,
+  },
+  { name: "CrossFit", location: "Hitec City, Hyderabad", logo: crossfitLogo },
+  { name: "House of Transformation", location: "Kokapet, Hyderabad", logo: hotLogo },
+  { name: "Platinum Fitness Club", location: "Attapur, Malakpet, Kondapur – Hyderabad", logo: platinumLogo },
+  { name: "The Gym 365", location: "Kukatpally, Hyderabad", logo: gymLogo },
+  { name: "cult.fit", location: "Hyderabad", logo: cultfitLogo },
 ];
 
 const PlacementSupportPage = () => (
@@ -46,34 +63,52 @@ const PlacementSupportPage = () => (
       <div className="container">
         <SectionHeading title="Our Placement Partners" />
         
-        {/* Partner Logos */}
-        <div className="flex flex-wrap items-center justify-center gap-8 mb-14">
-          {placementPartners.map((p) => (
-            <AnimatedSection key={p.name}>
-              <div className="float-card px-10 py-6 text-center min-w-[180px]">
-                <p className="font-heading text-xl font-bold text-foreground">{p.name}</p>
-                <p className="text-xs text-muted-foreground mt-1">{p.location}</p>
+        {/* Partner Logos – heading section */}
+        <AnimatedSection>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-14">
+            {placementPartners.map((p) => (
+              <div
+                key={p.name}
+                className="float-card flex flex-col items-center justify-center gap-3 px-4 py-5 text-center"
+              >
+                <div className="w-full h-24 md:h-28 flex items-center justify-center rounded-lg bg-white p-3">
+                  <img
+                    src={p.logo}
+                    alt={p.name + " logo"}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <p className="font-heading text-sm font-bold text-foreground leading-tight">{p.name}</p>
               </div>
-            </AnimatedSection>
-          ))}
-        </div>
+            ))}
+          </div>
+        </AnimatedSection>
 
         {/* Table */}
         <AnimatedSection>
-          <div className="premium-card-static overflow-hidden max-w-3xl mx-auto">
+          <div className="premium-card-static overflow-hidden max-w-4xl mx-auto">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="dark-section">
-                    <th className="p-4 text-left font-heading font-semibold text-white text-base">Gym Name</th>
-                    <th className="p-4 text-left font-heading font-semibold text-white text-base">Location</th>
+                    <th className="p-4 text-left font-heading font-semibold text-white text-base">#</th>
+                    <th className="p-4 text-left font-heading font-semibold text-white text-base">Gym / Partner</th>
+                    <th className="p-4 text-left font-heading font-semibold text-white text-base">Location(s)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {placementPartners.map((p, i) => (
-                    <tr key={p.name} className={`${i % 2 === 0 ? "bg-muted/30" : "bg-card"}`}>
-                      <td className="p-4 font-semibold text-foreground text-base">{p.name}</td>
-                      <td className="p-4 text-muted-foreground text-base">{p.location}</td>
+                    <tr key={p.name} className={`border-b border-border/40 ${i % 2 === 0 ? "bg-muted/30" : "bg-card"}`}>
+                      <td className="p-4 text-muted-foreground font-semibold text-sm w-10">{i + 1}</td>
+                      <td className="p-4 w-44">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white rounded-md border border-border/40 p-1">
+                            <img src={p.logo} alt={p.name} className="w-full h-full object-contain" />
+                          </div>
+                          <span className="font-semibold text-foreground text-sm leading-tight">{p.name}</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-muted-foreground text-sm">{p.location}</td>
                     </tr>
                   ))}
                 </tbody>

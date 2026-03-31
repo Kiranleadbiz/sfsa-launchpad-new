@@ -24,6 +24,10 @@ import testimonialMani from "@/assets/testimonial-mani.png";
 import testimonialShafi from "@/assets/testimonial-shafi.png";
 import testimonialBunny from "@/assets/testimonial-bunny.png";
 import testimonialAdnan from "@/assets/testimonial-adnan.jpeg";
+import speflLogo from "@/assets/SPEFL-SC.png";
+import skillIndiaLogo from "@/assets/Skill_India-removebg-preview.png";
+import pmkvyLogo from "@/assets/pmky.png";
+import nsdcLogo from "@/assets/NSDC-Logo-Vector.svg-.png";
 import {
   ArrowRight, Star, Clock,
   Dumbbell, Apple, Trophy, CheckCircle, Award,
@@ -341,25 +345,25 @@ const Index = () => {
                 <motion.div
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.3 }}
-                  className="float-card p-8 h-full relative group"
+                  className="float-card p-4 md:p-8 h-full relative group"
                 >
-                  <span className="absolute top-4 right-6 text-6xl font-serif text-accent/10 leading-none select-none">"</span>
-                  <div className="flex flex-row items-center gap-8">
+                  <span className="absolute top-3 right-4 md:top-4 md:right-6 text-4xl md:text-6xl font-serif text-accent/10 leading-none select-none">"</span>
+                  <div className="flex flex-row items-center gap-4 md:gap-8">
                     {/* Left: Image */}
-                    <div className="flex-shrink-0 w-40 h-40 rounded-2xl overflow-hidden border-2 border-accent/30 bg-white">
+                    <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-40 md:h-40 rounded-xl md:rounded-2xl overflow-hidden border-2 border-accent/30 bg-white">
                       <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                     </div>
                     {/* Right: Text */}
                     <div className="flex-1">
                       <div className="flex gap-0.5 mb-2">
                         {[...Array(5)].map((_, j) => (
-                          <Star key={j} size={16} className="fill-accent text-accent" />
+                          <Star key={j} size={14} className="fill-accent text-accent md:w-4 md:h-4" />
                         ))}
                       </div>
-                      <p className="text-muted-foreground text-base leading-relaxed mb-4 relative z-10">"{t.text}"</p>
+                      <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-3 md:mb-4 relative z-10">"{t.text}"</p>
                       <div>
-                        <p className="font-semibold text-base leading-tight">{t.name}</p>
-                        <p className="text-sm text-muted-foreground">{t.location} · {t.program}</p>
+                        <p className="font-semibold text-sm md:text-base leading-tight">{t.name}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">{t.location} · {t.program}</p>
                       </div>
                     </div>
                   </div>
@@ -390,30 +394,35 @@ const Index = () => {
       {/* ─── AFFILIATED & RECOGNIZED BY (SIDE BY SIDE) ─── */}
       <section className="section-padding-sm">
         <div className="container">
-          <div className="flex flex-col lg:flex-row gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
             {/* Affiliated With */}
-            <div className="flex-1 bg-white rounded-2xl shadow-md p-8 text-center flex flex-col items-center justify-center">
+            <div className="w-full bg-white rounded-2xl shadow-md p-5 sm:p-6 md:p-8 text-center flex flex-col items-center justify-center">
               <SectionHeading title="Affiliated With" subtitle="SPEFL-SC" />
-              <div className="flex flex-wrap items-center justify-center gap-8 mt-6">
+              <div className="w-full flex items-center justify-center mt-4 md:mt-6">
                 <AnimatedSection>
-                  <div className="float-card px-8 py-6 text-center">
-                    <img src="/src/assets/SPEFL-SC.png" alt="SPEFL-SC" className="h-12 w-auto mx-auto" />
+                  <div className="float-card w-full max-w-[260px] sm:max-w-[320px] px-6 py-5 text-center">
+                    <img src={speflLogo} alt="SPEFL-SC" className="h-10 sm:h-12 w-auto mx-auto" />
                   </div>
                 </AnimatedSection>
               </div>
             </div>
             {/* Recognized By */}
-            <div className="flex-1 bg-[#f7f9fb] rounded-2xl shadow-md p-8 text-center flex flex-col items-center justify-center">
+            <div className="w-full bg-[#f7f9fb] rounded-2xl shadow-md p-5 sm:p-6 md:p-8 text-center flex flex-col items-center justify-center">
               <SectionHeading title="Recognized By" subtitle="Skill India | PMKVY" />
-              <div className="flex flex-wrap items-center justify-center gap-8 mt-6">
+              <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6 place-items-center">
                 <AnimatedSection>
-                  <div className="float-card px-8 py-6 text-center">
-                    <img src="/src/assets/Skill_India-removebg-preview.png" alt="Skill India" className="h-12 w-auto mx-auto" />
+                  <div className="float-card w-full max-w-[260px] px-6 py-5 text-center">
+                    <img src={skillIndiaLogo} alt="Skill India" className="h-10 sm:h-12 w-auto mx-auto" />
                   </div>
                 </AnimatedSection>
                 <AnimatedSection>
-                  <div className="float-card px-8 py-6 text-center">
-                    <img src="/src/assets/pmky.png" alt="PMKVY" className="h-12 w-auto mx-auto" />
+                  <div className="float-card w-full max-w-[260px] px-6 py-5 text-center">
+                    <img src={pmkvyLogo} alt="PMKVY" className="h-10 sm:h-12 w-auto mx-auto" />
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection>
+                  <div className="float-card w-full max-w-[260px] px-6 py-5 text-center">
+                    <img src={nsdcLogo} alt="NSDC" className="h-10 sm:h-12 w-auto mx-auto" />
                   </div>
                 </AnimatedSection>
               </div>

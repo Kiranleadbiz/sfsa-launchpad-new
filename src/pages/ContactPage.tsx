@@ -54,13 +54,13 @@ const ContactPage = () => {
       {/* Form + Contact Info */}
       <section className="section-padding">
         <div className="container">
-          <div className="grid md:grid-cols-5 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-6 md:gap-12 max-w-5xl mx-auto">
             <AnimatedSection className="md:col-span-3">
               <EnquiryForm title="We'll respond within 24 hours" subtitle="Fill in your details and we'll get back to you promptly." />
             </AnimatedSection>
-            <div className="md:col-span-2 flex flex-col gap-5 h-full">
-              <div className="flex flex-col gap-5 h-full justify-between" style={{height: '100%'}}>
-                <div className="float-card p-6">
+            <div className="md:col-span-2 flex flex-col gap-4 md:gap-5 h-full">
+              <div className="flex flex-col gap-4 md:gap-5 h-full justify-between" style={{height: '100%'}}>
+                <div className="float-card p-5 md:p-6">
                   <h3 className="font-heading text-lg font-semibold mb-4">Main Office</h3>
                   <p className="text-sm font-medium text-foreground mb-3">Sports & Fitness Sciences Academy (SFSA)</p>
                   <div className="space-y-3 text-sm text-muted-foreground">
@@ -84,7 +84,7 @@ const ContactPage = () => {
                     </a>
                   </div>
                 </div>
-                <div className="float-card p-6">
+                <div className="float-card p-5 md:p-6">
                   <h3 className="font-heading text-lg font-semibold mb-4">Office Hours</h3>
                   <div className="space-y-2.5 text-sm text-muted-foreground">
                     <div className="flex items-center gap-3">
@@ -102,15 +102,15 @@ const ContactPage = () => {
 
           </div>
           {/* Social Links Bar: full width below grid */}
-          <div className="w-full flex flex-row gap-4 justify-between items-center mt-8 max-w-5xl mx-auto">
+          <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 mt-8 max-w-5xl mx-auto">
             {socialLinks.map((s) => (
               <a
                 key={s.label}
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
-                style={{ background: "hsl(45 100% 50% / 0.15)", color: "hsl(204 100% 10%)", flex: 1, justifyContent: 'center' }}
+                className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold px-3 sm:px-5 py-3 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+                style={{ background: "hsl(45 100% 50% / 0.15)", color: "hsl(204 100% 10%)" }}
               >
                 <s.icon />
                 {s.label}
