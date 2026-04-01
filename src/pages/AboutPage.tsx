@@ -93,13 +93,13 @@ const AboutPage = () => (
             <div className="rounded-3xl overflow-hidden shadow-xl h-[300px] group">
               <OptimizedImage src={trainingClassroom} alt="SFSA classroom theory session" className="w-full h-full group-hover:scale-105 transition-transform duration-700" style={{ objectPosition: "center center" }} />
             </div>
-            <p className="text-sm text-muted-foreground mt-4 text-center font-medium">Classroom Theory Sessions</p>
+            <p className="text-sm text-muted-foreground mt-4 text-center font-medium">Classroom Learning Sessions</p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <div className="rounded-3xl overflow-hidden shadow-xl h-[300px] group">
               <OptimizedImage src={trainingNutrition} alt="Nutrition science class at SFSA" className="w-full h-full group-hover:scale-105 transition-transform duration-700" style={{ objectPosition: "center center" }} />
             </div>
-            <p className="text-sm text-muted-foreground mt-4 text-center font-medium">Nutrition Science Training</p>
+            <p className="text-sm text-muted-foreground mt-4 text-center font-medium">Hands-On Practical Training</p>
           </AnimatedSection>
         </div>
       </div>
