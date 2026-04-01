@@ -26,7 +26,11 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
         {/* Brand */}
         <div>
-          <img src={sfsaLogo} alt="SFSA Logo" className="h-28 md:h-32 w-auto mb-4" style={{ maxWidth: 420 }} />
+          <img
+            src={sfsaLogo}
+            alt="SFSA Logo"
+            className="w-[210px] md:w-[230px] h-[145px] md:h-[170px] object-contain object-left mb-3"
+          />
           <div className="flex items-center gap-3 mt-6">
             {socialLinks.map((s) => (
               <a

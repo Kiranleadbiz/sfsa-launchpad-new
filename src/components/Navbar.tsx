@@ -38,8 +38,8 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${navBg}`}>
       <div className="container flex items-center justify-between h-24 md:h-28">
-        <Link to="/" className="flex items-center gap-2 relative z-10">
-          <img src={sfsaLogo} alt="SFSA Logo" className="h-[7.5rem] md:h-[8.5rem] w-auto" style={{ maxWidth: 520 }} />
+        <Link to="/" className="flex items-center gap-2 relative z-10 h-full pt-2 md:pt-3">
+          <img src={sfsaLogo} alt="SFSA Logo" className="block h-[7.5rem] md:h-[8.5rem] w-auto" style={{ maxWidth: 520 }} />
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">

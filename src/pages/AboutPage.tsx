@@ -4,8 +4,8 @@ import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import OptimizedImage from "@/components/OptimizedImage";
 import aboutHero from "@/assets/about-hero.jpg";
-import trainingClassroom from "@/assets/training-strength.jpg";
-import trainingNutrition from "@/assets/training-nutrition.jpg";
+import trainingClassroom from "@/assets/s4.jpg.jpeg";
+import trainingNutrition from "@/assets/s1.jpg.jpeg";
 import { MapPin, ShieldCheck, Award, BookOpen, Dumbbell, Monitor, Globe, Target, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -116,18 +116,15 @@ const AboutPage = () => (
             Discover which certification program aligns with your career goals.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto mt-6">
-            <a
-              href="/courses"
-              className="btn-yellow w-full h-[3.25rem] inline-flex items-center justify-center font-heading font-semibold text-base shadow-lg transition-all duration-300 hover:-translate-y-1"
-            >
-              View Programs
-            </a>
-            <a
-              href="/contact"
-              className="btn-yellow w-full h-[3.25rem] inline-flex items-center justify-center font-heading font-semibold text-base shadow-lg transition-all duration-300 hover:-translate-y-1"
-            >
-              Apply Now
-            </a>
+            <Button asChild className="btn-yellow w-full h-[3.25rem] font-heading font-semibold text-base shadow-lg transition-all duration-300 hover:-translate-y-1 uppercase tracking-wider">
+              <Link to="/contact">Apply Now</Link>
+            </Button>
+            <Button asChild className="w-full h-[3.25rem] border-2 border-accent/50 bg-transparent text-white hover:bg-accent/10 hover:border-accent hover:text-accent rounded-xl font-heading font-semibold text-base transition-all duration-300 shadow-lg relative overflow-hidden uppercase tracking-wider">
+              <Link to="/courses" className="flex items-center justify-center w-full">
+                <span className="absolute left-0 top-0 h-full w-1 bg-accent"></span>
+                <span className="ml-3">View Programs</span>
+              </Link>
+            </Button>
           </div>
         </AnimatedSection>
       </div>

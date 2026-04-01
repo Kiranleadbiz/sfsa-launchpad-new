@@ -1,10 +1,10 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
 import OptimizedImage from "@/components/OptimizedImage";
-import academyImage1 from "@/assets/s1.jpg.jpeg";
+import academyImage1 from "@/assets/image-1775030202713.png";
 import academyImage2 from "@/assets/s2.jpg.jpeg";
 import academyImage3 from "@/assets/s3.jpg.jpeg";
-import academyImage4 from "@/assets/s4.jpg.jpeg";
+import academyImage4 from "@/assets/image-1775030942743.png";
 import academyImage5 from "@/assets/s5.jpg.jpeg";
 import academyImage6 from "@/assets/s7.jpg.jpeg";
 
