@@ -105,9 +105,11 @@ const Footer = () => (
         <p className="text-xs text-white/30">
           © {new Date().getFullYear()} Sports and Fitness Sciences Academy. All rights reserved.
         </p>
-        <p className="text-xs text-white/30">
-          Made with ❤️ in Hyderabad
-        </p>
+        <div className="flex items-center gap-4 text-xs">
+          <Link to="/privacy-policy" className="text-white/40 hover:text-accent transition-colors">Privacy Policy</Link>
+          <span className="text-white/20">|</span>
+          <Link to="/terms-and-conditions" className="text-white/40 hover:text-accent transition-colors">Terms & Conditions</Link>
+        </div>
       </div>
     </div>
   </footer>

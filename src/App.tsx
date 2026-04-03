@@ -13,6 +13,8 @@ const CertificateVerificationPage = lazy(() => import("./pages/CertificateVerifi
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const WorkshopsPage = lazy(() => import("./pages/WorkshopsPage"));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
+const TermsPage = lazy(() => import("./pages/TermsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const AnimatedRoutes = () => {
           <Route path="/certificate-verification" element={<CertificateVerificationPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-and-conditions" element={<TermsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
