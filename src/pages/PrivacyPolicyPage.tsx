@@ -4,7 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const PrivacyPolicyPage = () => (
   <Layout>
-    <section className="section-padding-sm section-blue">
+    <section className="pt-40 md:pt-48 pb-12 md:pb-16 section-blue">
       <div className="container">
         <SectionHeading
           title="Privacy Policy"
